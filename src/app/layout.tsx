@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import {Header} from "@/modules/layout/header/Header";
 
 export const metadata: Metadata = {
   title: "StreomVibe",
@@ -14,8 +15,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`antialiased`}
+        className={`antialiased font-manrope-regular bg-black08`}
       >
+      <Header />
         {children}
       </body>
     </html>
