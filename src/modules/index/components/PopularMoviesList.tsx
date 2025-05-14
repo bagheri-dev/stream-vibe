@@ -13,12 +13,14 @@ import 'swiper/css/pagination';
 export const PopularMoviesList = () => {
     const [page, setPage] = useState(1);
 
-    const { data, isPending, error } = useQuery({
+    const { data, isLoading, error } = useQuery({
         queryKey: ['popularMovies', page],
-        queryFn: () => fetchPopularMoviesList(page),
+        queryFn: async () =>  (await fetchPopularMoviesList(page)),
     });
 
-    if (isPending) {
+    console.log(data)
+
+    if (isLoading) {
         return <div className="p-4 text-center">در حال بارگذاری...</div>;
     }
 

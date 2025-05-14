@@ -348,3 +348,7 @@
 .bg-grey99 {
   background-color: #FCFCFD;
 }
+
+.custom-gradient-background {
+  background: linear-gradient(to left, #E50000 , #E5000081 , #0F0F0F);
+}
