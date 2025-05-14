@@ -12,7 +12,7 @@ export const fetchPopularMoviesList = async (page : number = 1) => {
                 page
             }
         });
-        console.log(response.data.results);
+        return response.data.results;
     } catch (error) {
         console.log(error);
     }
@@ -28,7 +28,7 @@ export const fetchTopRatedMoviesList = async (page : number = 1) => {
                 page
             }
         });
-        console.log(response.data.results);
+        return  response.data.results;
     } catch (error) {
         console.log(error);
     }
@@ -44,7 +44,7 @@ export const fetchUpcomingMoviesList = async (page : number = 1) => {
                 page
             }
         });
-        console.log(response.data.results);
+        return response.data.results;
     } catch (error) {
         console.log(error);
     }

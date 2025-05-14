@@ -4,10 +4,10 @@ import {FaPlay} from "react-icons/fa";
 
 export const Hero: FC = () => {
     return (
-        <div className={"bg-[url(/images/hero.png)] bg-center bg-cover h-screen"}>
+        <div className={"bg-[url(/images/hero.png)] bg-center bg-cover h-screen mb-[200px]"}>
             <SiteContainer>
                 <div className={"h-screen flex items-end justify-center"}>
-                    <div className={"flex flex-col items-center translate-y-72 gap-[50px]"}>
+                    <div className={"flex flex-col items-center gap-[50px]"}>
                         <div className={"text-center"}>
                             <h1 className={"font-manrope-bold text-[28px] md:text-5xl lg:text-[58px] text-white mb-8"}>The Best Streaming Experience</h1>
                             <p className={"lg:max-w-[1096px] text-sm lg:text-lg grey60"}>

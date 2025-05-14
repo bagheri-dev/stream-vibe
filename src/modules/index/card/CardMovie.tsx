@@ -18,7 +18,7 @@ type Props = {
     vote_count: number;
 }
 
-const imageUrl = 'https://image.tmdb.org/t/p/w500/';
+const imageUrl = 'https://image.tmdb.org/t/p/w500';
 
 export const CardMovie = (props : Props) => {
     return (
