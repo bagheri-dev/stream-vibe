@@ -1,7 +1,6 @@
 'use client';
 import { useQuery } from '@tanstack/react-query';
 import { fetchPopularMoviesList } from '@/apis/services/fetchMoviesList';
-import { useState } from 'react';
 import { SiteContainer } from '@/lib/SiteContainer';
 import { CardMovie } from '@/modules/index/card/CardMovie';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -11,11 +10,10 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 export const PopularMoviesList = () => {
-    const [page, setPage] = useState(1);
 
     const { data, isLoading, error } = useQuery({
-        queryKey: ['popularMovies', page],
-        queryFn: async () =>  (await fetchPopularMoviesList(page)),
+        queryKey: ['popularMovies'],
+        queryFn: async () =>  (await fetchPopularMoviesList()),
     });
 
     console.log(data)
@@ -59,7 +57,7 @@ export const PopularMoviesList = () => {
                             spaceBetween: 30,
                         },
                     }}
-                    className="mySwiper h-[450px]"
+                    className="mySwiper h-[500px]"
                 >
                     {data?.map((movie: any, index: number) => (
                         <SwiperSlide key={index}>

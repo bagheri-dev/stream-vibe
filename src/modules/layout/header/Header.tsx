@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import { SiteContainer } from "@/lib/SiteContainer";
 import Image from "next/image";
 import Link from "next/link";
@@ -11,7 +11,7 @@ import { searchMovies } from "@/apis/services/movieService";
 
 const Menu = [
     { name: "Home", src: "/" },
-    { name: "Movies & Shows", src: "/movies" },
+    { name: "Movies & Shows", src: "/movie" },
     { name: "Support", src: "/support" },
     { name: "Subscriptions", src: "/subscriptions" },
 ];
@@ -23,6 +23,7 @@ export const Header = () => {
     const [isSearchOpen, setIsSearchOpen] = useState(false);
     const [hasScrolled, setHasScrolled] = useState(false);
     const [searchQuery, setSearchQuery] = useState("");
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const [searchResults, setSearchResults] = useState<any[]>([]);
     const [isSearching, setIsSearching] = useState(false);
     const searchRef = useRef<HTMLDivElement>(null);
@@ -91,9 +92,8 @@ export const Header = () => {
     };
 
     return (
-        <div className={`fixed z-50 top-0 left-0 right-0 py-4 md:py-6 transition-all duration-300 ${
-            hasScrolled ? 'backdrop-blur-sm shadow-lg' : 'bg-transparent'
-        }`}>
+        <div className={`fixed z-50 top-0 left-0 right-0 transition-all duration-300 ${hasScrolled ? 'backdrop-blur-sm shadow-lg' : 'bg-transparent'
+            }`}>
             <SiteContainer>
                 <div className="flex items-center justify-between">
                     <div className="flex-shrink-0">
@@ -109,16 +109,12 @@ export const Header = () => {
 
                     <div className="hidden lg:block">
                         <nav>
-                            <ul className={`flex items-center p-2.5 rounded-[12px] border-4 ${
-                                hasScrolled ? 'border-gray-800' : 'border-[#1F1F1F] bg-black/60'
-                            }`}>
+                            <ul className={`flex items-center p-2.5 rounded-[12px] transition-all duration-300 ${hasScrolled ? 'border-gray-800' : 'border-[#1F1F1F] bg-black/60'
+                                }`}>
                                 {Menu.map((item) => (
                                     <Link key={item.name} href={item.src}>
-                                        <li className={`py-[14px] px-6 transition-colors duration-200 ${
-                                            isActive(item.src)
-                                                ? 'text-white font-semibold'
-                                                : 'text-gray-300 hover:text-white'
-                                        }`}>
+                                        <li className={`py-[14px] px-6 transition-colors duration-200 ${isActive(item.src) ? 'text-white font-semibold' : 'text-gray-300 hover:text-white'
+                                            }`}>
                                             {item.name}
                                             {isActive(item.src) && (
                                                 <div className="h-1 w-full bg-red-500 mt-1 rounded-full"></div>
@@ -133,12 +129,11 @@ export const Header = () => {
                     <div className="flex items-center gap-x-4 md:gap-x-[14px] text-white">
                         <div className="relative" ref={searchRef}>
                             <button onClick={toggleSearch} className="focus:outline-none">
-                                <CiSearch className="size-6 cursor-pointer" />
+                                <CiSearch className="text-xl cursor-pointer hover:text-gray-300 transition-colors size-6" />
                             </button>
                             <div
-                                className={`absolute right-0 top-10 w-64 bg-[#1F1F1F] rounded-lg overflow-hidden transition-all duration-300 ease-in-out ${
-                                    isSearchOpen ? "opacity-100 max-h-96" : "opacity-0 max-h-0"
-                                }`}
+                                className={`absolute right-0 top-10 w-64 bg-[#1F1F1F] rounded-lg overflow-hidden transition-all duration-300 ease-in-out ${isSearchOpen ? "opacity-100 max-h-96" : "opacity-0 max-h-0"
+                                    }`}
                             >
                                 <div className="relative p-2">
                                     <input
@@ -156,7 +151,7 @@ export const Header = () => {
                                             }}
                                             className="absolute right-3 top-3 text-gray-400 hover:text-white"
                                         >
-                                            <CiCircleRemove className="size-5" />
+                                            <CiCircleRemove className="text-lg" />
                                         </button>
                                     )}
                                 </div>
@@ -181,6 +176,7 @@ export const Header = () => {
                                                             width={46}
                                                             height={69}
                                                             className="rounded-sm"
+                                                            unoptimized
                                                         />
                                                     </div>
                                                 )}
@@ -204,39 +200,32 @@ export const Header = () => {
                         </div>
 
                         <Link href="/notifications">
-                            <IoNotificationsOutline className="size-6 hover:text-gray-300 transition-colors" />
+                            <IoNotificationsOutline className="text-xl hover:text-gray-300 transition-colors size-6" />
                         </Link>
 
                         <button className="lg:hidden focus:outline-none" onClick={toggleMenu}>
                             {isMenuOpen ? (
-                                <IoClose className="size-6 hover:text-gray-300 transition-colors" />
+                                <IoClose className="text-xl hover:text-gray-300 transition-colors" />
                             ) : (
-                                <IoMenu className="size-6 hover:text-gray-300 transition-colors" />
+                                <IoMenu className="text-xl hover:text-gray-300 transition-colors" />
                             )}
                         </button>
                     </div>
                 </div>
 
                 <div
-                    className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${
-                        isMenuOpen ? "max-h-96 opacity-100 mt-4" : "max-h-0 opacity-0"
-                    }`}
+                    className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${isMenuOpen ? "max-h-96 opacity-100 mt-4" : "max-h-0 opacity-0"
+                        }`}
                 >
                     <nav>
-                        <ul className={`flex flex-col rounded-[12px] border-4 p-4 ${
-                            hasScrolled ? 'border-gray-800' : 'border-[#1F1F1F] bg-black/60'
-                        }`}>
+                        <ul className={`flex flex-col rounded-[12px] border-4 p-4 ${hasScrolled ? 'border-gray-800' : 'border-[#1F1F1F] bg-black/60'
+                            }`}>
                             {Menu.map((item) => (
-                                <Link
-                                    key={item.name}
-                                    href={item.src}
-                                    onClick={() => setIsMenuOpen(false)}
-                                >
-                                    <li className={`py-3 px-4 transition-colors duration-200 border-b border-[#1F1F1F] last:border-b-0 ${
-                                        isActive(item.src)
+                                <Link key={item.name} href={item.src} onClick={() => setIsMenuOpen(false)}>
+                                    <li className={`py-3 px-4 transition-colors duration-200 border-b border-[#1F1F1F] last:border-b-0 ${isActive(item.src)
                                             ? 'text-white font-semibold'
                                             : 'text-gray-300 hover:text-white'
-                                    }`}>
+                                        }`}>
                                         {item.name}
                                         {isActive(item.src) && (
                                             <div className="h-1 w-full bg-red-500 mt-1 rounded-full"></div>

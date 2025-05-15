@@ -34,8 +34,8 @@ export const fetchTopRatedMoviesList = async (page : number = 1) => {
     }
 }
 
-// Upcoming Movies
-export const fetchUpcomingMoviesList = async (page : number = 1) => {
+// Top Movies
+export const fetchTopMoviesList = async (page : number = 1) => {
     try {
         const response = await client.get('/movie/top_rated', {
             params: {

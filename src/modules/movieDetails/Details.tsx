@@ -121,7 +121,7 @@ export const Details = () => {
                                 </div>
                             )}
 
-                            <div className="flex-1">
+                            <div className="flex-1 pt-10">
                                 <h1 className="text-4xl md:text-5xl font-bold mb-2">{data.title}</h1>
                                 <p className="text-xl italic text-gray-300 mb-4">{data.tagline}</p>
 

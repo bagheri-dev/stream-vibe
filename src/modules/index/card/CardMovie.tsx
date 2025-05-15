@@ -25,11 +25,11 @@ export const CardMovie = (props : Props) => {
     return (
         <Link href={`/movie/${props.id}`}>
             <div className={"bg-black10 p-5 rounded-[12px]"}>
-                <div>
-                    <Image src={posterUrl} alt={props.original_title} width={244} height={281} priority={true} />
+                <div className="mb-2">
+                    <Image className="rounded-[12px]  object-fill h-[350px]" src={posterUrl} alt={props.original_title} width={244} height={281} priority={true} unoptimized />
                 </div>
                 <div className={"bg-black08 text-center py-1.5 rounded-[51px] border border-[#262626]"}>
-                    <h3 className={"grey60"}>{props.title}</h3>
+                    <h3 className={"grey60 line-clamp-1"}>{props.title}</h3>
                 </div>
             </div>
         </Link>

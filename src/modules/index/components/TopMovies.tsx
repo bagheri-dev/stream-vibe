@@ -1,28 +1,28 @@
 "use client"
 import {useQuery} from "@tanstack/react-query";
-import {fetchUpcomingMoviesList} from "@/apis/services/fetchMoviesList";
+import {fetchTopMoviesList} from "@/apis/services/fetchMoviesList";
 import {SiteContainer} from "@/lib/SiteContainer";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Navigation, Pagination} from "swiper/modules";
-import {CardUpcomingMovie} from "@/modules/index/card/CardUpcomingMovie";
+import { CardMovie } from "../card/CardMovie";
 
-export const UpcomingMovieList = () => {
+export const TopMoviesList = () => {
 
     const { data, isLoading, error } = useQuery({
-        queryKey: ['popularMovies'],
-        queryFn: async () =>  (await fetchUpcomingMoviesList()),
+        queryKey: ['TopMovies'],
+        queryFn: async () =>  (await fetchTopMoviesList()),
     });
 
     console.log(data)
 
     if (isLoading) {
-        return <div className="p-4 text-center">در حال بارگذاری...</div>;
+        return <div className="p-4 text-center">Loading...</div>;
     }
 
     if (error) {
         return (
             <div className="p-4 text-center text-red-500">
-                خطا: {error.message || 'مشکل در دریافت داده‌ها'}
+                Error: {error.message || 'Problem fetching data'}
             </div>
         );
     }
@@ -32,7 +32,7 @@ export const UpcomingMovieList = () => {
             <SiteContainer>
                 <div className={"mb-[50px]"}>
                     <h2 className={"text-[38px] font-manrope-bold text-white"}>
-                        Upcoming Movies
+                        Top Movies
                     </h2>
                 </div>
                 <Swiper
@@ -54,11 +54,11 @@ export const UpcomingMovieList = () => {
                             spaceBetween: 30,
                         },
                     }}
-                    className="mySwiper h-[450px]"
+                    className="mySwiper h-[500px]"
                 >
                     {data?.map((movie: any, index: number) => (
                         <SwiperSlide key={index}>
-                            <CardUpcomingMovie {...movie} />
+                            <CardMovie {...movie} />
                         </SwiperSlide>
                     ))}
                 </Swiper>

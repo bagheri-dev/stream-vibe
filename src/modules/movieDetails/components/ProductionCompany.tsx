@@ -15,6 +15,7 @@ export const ProductionCompany: React.FC<ProductionCompanyProps> = ({ name, logo
                         alt={name}
                         fill
                         className="object-contain"
+                        unoptimized
                     />
                 </div>
             ) : (
