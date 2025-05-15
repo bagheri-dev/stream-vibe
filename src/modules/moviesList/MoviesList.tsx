@@ -20,7 +20,6 @@ export const MoviesList = () => {
     const { data, isLoading, error } = useQuery({
         queryKey: ['Movies', page], 
         queryFn: async () => (await fetchMoviesList(page)), 
-        keepPreviousData: true,
     });
 
     const totalPages = data?.total_pages || 1; 
