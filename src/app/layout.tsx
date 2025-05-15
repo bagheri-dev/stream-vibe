@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import {Header} from "@/modules/layout/header/Header";
 import Providers from "@/providers/Providers";
+import {Footer} from "@/modules/layout/footer/Footer";
 
 export const metadata: Metadata = {
   title: "StreomVibe",
@@ -22,6 +23,7 @@ export default function RootLayout({
         <Providers>
             {children}
         </Providers>
+      <Footer />
       </body>
     </html>
   );
