@@ -72,15 +72,15 @@ export const MoviesList = () => {
                     <button
                         onClick={() => handlePageChange(page - 1)}
                         disabled={page === 1}
-                        className="bg-gray-700 text-white px-4 py-2 rounded-md disabled:bg-gray-500"
+                        className="cursor-pointer bg-gray-700 text-white px-4 py-2 rounded-md disabled:bg-gray-500"
                     >
                         Previous
                     </button>
-                    <span className="text-white">{page} / {totalPages}</span>
+                    <span className="text-white translate-y-2 text-lg font-manrope-semibold">{page} / {totalPages}</span>
                     <button
                         onClick={() => handlePageChange(page + 1)}
                         disabled={page === totalPages}
-                        className="bg-gray-700 text-white px-4 py-2 rounded-md disabled:bg-gray-500"
+                        className="cursor-pointer bg-gray-700 text-white px-4 py-2 rounded-md disabled:bg-gray-500"
                     >
                         Next
                     </button>

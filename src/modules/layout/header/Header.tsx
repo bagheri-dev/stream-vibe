@@ -92,8 +92,7 @@ export const Header = () => {
     };
 
     return (
-        <div className={`fixed z-50 top-0 left-0 right-0 transition-all duration-300 ${hasScrolled ? 'backdrop-blur-sm shadow-lg' : 'bg-transparent'
-            }`}>
+        <div className={`fixed z-50 top-0 left-0 right-0 transition-all duration-300 bg-black/30 backdrop-blur-sm shadow-lg`}>
             <SiteContainer>
                 <div className="flex items-center justify-between">
                     <div className="flex-shrink-0">
@@ -109,11 +108,10 @@ export const Header = () => {
 
                     <div className="hidden lg:block">
                         <nav>
-                            <ul className={`flex items-center p-2.5 rounded-[12px] transition-all duration-300 ${hasScrolled ? 'border-gray-800' : 'border-[#1F1F1F] bg-black/60'
-                                }`}>
+                            <ul className={`flex items-center p-2.5 rounded-[12px] transition-all duration-300`}>
                                 {Menu.map((item) => (
                                     <Link key={item.name} href={item.src}>
-                                        <li className={`py-[14px] px-6 transition-colors duration-200 ${isActive(item.src) ? 'text-white font-semibold' : 'text-gray-300 hover:text-white'
+                                        <li className={`py-[14px] px-6 transition-colors duration-200 ${isActive(item.src) ? 'text-white font-semibold' : 'text-gray-100 hover:text-white'
                                             }`}>
                                             {item.name}
                                             {isActive(item.src) && (
