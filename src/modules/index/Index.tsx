@@ -2,6 +2,7 @@ import {Hero} from "@/modules/index/components/Hero";
 import {PopularMoviesList} from "@/modules/index/components/PopularMoviesList";
 import {Features} from "@/modules/index/components/Features";
 import {Banner} from "@/components/shared/Banner";
+import {UpcomingMovieList} from "@/modules/index/components/UpcomingMovieList";
 
 export const Index = () => {
     return (
@@ -9,6 +10,7 @@ export const Index = () => {
             <Hero />
             <PopularMoviesList />
             <Features />
+            <UpcomingMovieList />
             <Banner />
         </>
     )
