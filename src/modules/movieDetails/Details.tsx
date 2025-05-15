@@ -89,9 +89,9 @@ export const Details = () => {
     };
 
     return (
-        <div className="bg-gray-900 text-white min-h-screen">
-            <div className="relative h-[70vh] w-full overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/70 to-transparent z-10" />
+        <div className="bg-black08 text-white min-h-screen">
+            <div className="bg-black06 relative h-[70vh] w-full overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-t from-black08 via-black08/70 to-transparent z-10" />
                 {data.backdrop_path && (
                     <Image
                         src={`https://image.tmdb.org/t/p/original${data.backdrop_path}`}
@@ -178,7 +178,7 @@ export const Details = () => {
                         <h2 className="text-2xl font-bold mb-4">Overview</h2>
                         <p className="text-gray-300 leading-relaxed mb-8">{data.overview}</p>
 
-                        <div className="bg-gray-800 rounded-xl p-6 mb-8">
+                        <div className="bg-black06 rounded-xl p-6 mb-8">
                             <h3 className="text-xl font-semibold mb-4 border-b border-gray-700 pb-2">Production Details</h3>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
@@ -218,7 +218,7 @@ export const Details = () => {
                     </div>
 
                     <div className="space-y-6">
-                        <div className="bg-gray-800 rounded-xl p-6">
+                        <div className="bg-black06 shadow-sm rounded-xl p-6">
                             <h3 className="text-xl font-semibold mb-4">External Links</h3>
                             <div className="space-y-3">
                                 {data.homepage && (
@@ -244,7 +244,7 @@ export const Details = () => {
                             </div>
                         </div>
 
-                        <div className="bg-gray-800 rounded-xl p-6">
+                        <div className="bg-black06 rounded-xl p-6">
                             <h3 className="text-xl font-semibold mb-4">Statistics</h3>
                             <div className="space-y-4">
                                 <div>

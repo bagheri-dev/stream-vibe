@@ -92,7 +92,7 @@ export const Header = () => {
 
     return (
         <div className={`fixed z-50 top-0 left-0 right-0 py-4 md:py-6 transition-all duration-300 ${
-            hasScrolled ? 'bg-black08 backdrop-blur-sm shadow-lg' : 'bg-transparent'
+            hasScrolled ? 'backdrop-blur-sm shadow-lg' : 'bg-transparent'
         }`}>
             <SiteContainer>
                 <div className="flex items-center justify-between">
