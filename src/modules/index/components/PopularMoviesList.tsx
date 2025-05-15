@@ -19,13 +19,13 @@ export const PopularMoviesList = () => {
     console.log(data)
 
     if (isLoading) {
-        return <div className="p-4 text-center">در حال بارگذاری...</div>;
+        return <div className="p-4 text-center">Loading...</div>;
     }
 
     if (error) {
         return (
             <div className="p-4 text-center text-red-500">
-                خطا: {error.message || 'مشکل در دریافت داده‌ها'}
+                Error: {error.message || 'Problem fetching data'}
             </div>
         );
     }
