@@ -7,7 +7,6 @@ import { motion } from "framer-motion";
 export const Footer = () => {
     const currentYear = new Date().getFullYear();
 
-    // Animation variants
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -41,7 +40,6 @@ export const Footer = () => {
                 className="container mx-auto px-4"
             >
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-                    {/* Logo and description */}
                     <motion.div variants={itemVariants} className="lg:col-span-1">
                         <Link href="/" className="flex items-center mb-4">
                             <Image
@@ -76,7 +74,6 @@ export const Footer = () => {
                         </div>
                     </motion.div>
 
-                    {/* Quick Links */}
                     <motion.div variants={itemVariants}>
                         <h3 className="text-lg font-semibold mb-4 border-b border-gray-700 pb-2">Quick Links</h3>
                         <ul className="space-y-2">
@@ -96,7 +93,6 @@ export const Footer = () => {
                         </ul>
                     </motion.div>
 
-                    {/* Categories */}
                     <motion.div variants={itemVariants}>
                         <h3 className="text-lg font-semibold mb-4 border-b border-gray-700 pb-2">Categories</h3>
                         <ul className="space-y-2">
@@ -116,7 +112,6 @@ export const Footer = () => {
                         </ul>
                     </motion.div>
 
-                    {/* Contact Info */}
                     <motion.div variants={itemVariants}>
                         <h3 className="text-lg font-semibold mb-4 border-b border-gray-700 pb-2">Contact Us</h3>
                         <address className="not-italic text-gray-400 space-y-2">
@@ -131,7 +126,6 @@ export const Footer = () => {
                     </motion.div>
                 </div>
 
-                {/* Copyright Section */}
                 <motion.div
                     variants={itemVariants}
                     className="border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center"

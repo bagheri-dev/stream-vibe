@@ -11,7 +11,7 @@ export const fetchGenreList = async () => {
                 language: "en-US",
             }
         });
-        console.log(response.data.genres);
+        return response.data.genres
     } catch (error) {
         console.log(error);
     }

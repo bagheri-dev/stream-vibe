@@ -1,27 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-
-type Props = {
-    adult: boolean;
-    backdrop_path: string | null;
-    genre_ids: number[];
-    id: number;
-    original_language: string;
-    original_title: string;
-    overview: string;
-    popularity: number;
-    poster_path: string | null;
-    release_date: string;
-    title: string;
-    video: boolean;
-    vote_average: number;
-    vote_count: number;
-};
+import { IMovie } from "@/type/movie.type";
 
 const imageUrl = 'https://image.tmdb.org/t/p/w500';
 
-export const CardMovie = (props: Props) => {
+export const CardMovie = (props: IMovie) => {
     const posterUrl = props.poster_path ? `${imageUrl}${props.poster_path}` : '/placeholder-movie.jpg';
 
     const cardVariants = {

@@ -5,6 +5,7 @@ import {SiteContainer} from "@/lib/SiteContainer";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Navigation, Pagination} from "swiper/modules";
 import { CardMovie } from "../card/CardMovie";
+import { IMovie } from "@/type/movie.type";
 
 export const TopMoviesList = () => {
 
@@ -13,7 +14,6 @@ export const TopMoviesList = () => {
         queryFn: async () =>  (await fetchTopMoviesList()),
     });
 
-    console.log(data)
 
     if (isLoading) {
         return <div className="p-4 text-center">Loading...</div>;
@@ -56,7 +56,7 @@ export const TopMoviesList = () => {
                     }}
                     className="mySwiper h-[500px]"
                 >
-                    {data?.map((movie: any, index: number) => (
+                    {data?.map((movie: IMovie, index: number) => (
                         <SwiperSlide key={index}>
                             <CardMovie {...movie} />
                         </SwiperSlide>

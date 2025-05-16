@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import React, { Suspense, useEffect } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
@@ -28,13 +28,9 @@ const ProgressBar = () => {
             }
         };
 
-        const handleRouteChangeComplete = () => {
-            NProgress.done();
-        };
-
         const anchors = document.querySelectorAll('a[href]');
         anchors.forEach(anchor => {
-            anchor.addEventListener('click', handleAnchorClick);
+            anchor.addEventListener('click', handleAnchorClick as EventListener);
         });
 
         const timeout = setTimeout(() => {
@@ -43,7 +39,7 @@ const ProgressBar = () => {
 
         return () => {
             anchors.forEach(anchor => {
-                anchor.removeEventListener('click', handleAnchorClick);
+                anchor.removeEventListener('click', handleAnchorClick as EventListener);
             });
             clearTimeout(timeout);
             NProgress.done();
@@ -53,4 +49,12 @@ const ProgressBar = () => {
     return null;
 };
 
-export default ProgressBar;
+const SuspenseWrapper = () => {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <ProgressBar />
+        </Suspense>
+    );
+};
+
+export default SuspenseWrapper;

@@ -1,11 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Imovie } from "@/type/movie.type";
 import { motion } from "framer-motion";
+import { IMovie } from "@/type/movie.type";
 
 const imageUrl = "https://image.tmdb.org/t/p/w500/";
 
-export const CardUpcomingMovie = (props: Imovie) => {
+export const CardUpcomingMovie = (props: IMovie) => {
   return (
     <Link href={`/movie/${props.id}`}>
       <motion.div

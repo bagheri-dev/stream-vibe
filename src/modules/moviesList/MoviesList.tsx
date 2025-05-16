@@ -5,6 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import Image from "next/image";
 import { useState } from "react";
 import { CardMovie } from "../index/card/CardMovie";
+import { IMovie } from "@/type/movie.type";
 
 const SkeletonCard = () => (
     <div className="bg-gray-800 p-5 rounded-[12px] animate-pulse shadow-lg">
@@ -63,7 +64,7 @@ export const MoviesList = () => {
                         ? Array.from({ length: 12 }).map((_, index) => (
                             <SkeletonCard key={index} />
                         ))
-                        : data.results.map((movie: any) => (
+                        : data.results.map((movie: IMovie) => (
                             <CardMovie key={movie.id} {...movie} />
                         ))}
                 </div>
