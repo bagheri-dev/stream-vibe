@@ -96,14 +96,16 @@ export const Header = () => {
             <SiteContainer>
                 <div className="flex items-center justify-between">
                     <div className="flex-shrink-0">
-                        <Image
-                            src="/images/logo.webp"
-                            alt="logo"
-                            width={150}
-                            height={45}
-                            className="md:w-[200px] md:h-[60px]"
-                            priority
-                        />
+                        <Link href="/">
+                            <Image
+                                src="/images/logo.webp"
+                                alt="logo"
+                                width={150}
+                                height={45}
+                                className="md:w-[200px] md:h-[60px]"
+                                priority
+                            />
+                        </Link>
                     </div>
 
                     <div className="hidden lg:block">
@@ -221,8 +223,8 @@ export const Header = () => {
                             {Menu.map((item) => (
                                 <Link key={item.name} href={item.src} onClick={() => setIsMenuOpen(false)}>
                                     <li className={`py-3 px-4 transition-colors duration-200 border-b border-[#1F1F1F] last:border-b-0 ${isActive(item.src)
-                                            ? 'text-white font-semibold'
-                                            : 'text-gray-300 hover:text-white'
+                                        ? 'text-white font-semibold'
+                                        : 'text-gray-300 hover:text-white'
                                         }`}>
                                         {item.name}
                                         {isActive(item.src) && (

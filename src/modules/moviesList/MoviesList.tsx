@@ -54,7 +54,7 @@ export const MoviesList = () => {
                     alt="Movie Poster"
                     width={300}
                     height={600}
-                    className="rounded-lg w-full h-full object-fill"
+                    className="rounded-lg w-full h-full object-cover"
                     quality={100}
                     unoptimized
                 />
@@ -66,7 +66,7 @@ export const MoviesList = () => {
                     </h2>
                 </div>
 
-                <div className="grid grid-cols-4 gap-5">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
                     {isLoading
                         ? Array.from({ length: 12 }).map((_, index) => (
                             <SkeletonCard key={index} />
