@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Streom Vibe
 
-## Getting Started
+**Streom Vibe** is a dynamic movie web application that allows users to explore movies, view their details, and subscribe for enhanced features. The app integrates with the TMDB API to fetch real-time movie data and provides a sleek, user-friendly interface built with React, Next.js, and Tailwind CSS. Streom Vibe offers a great experience for movie enthusiasts who want to explore, discover, and keep track of their favorite films.
 
-First, run the development server:
+## Features
+
+- **Movie Listings**: Browse a comprehensive list of movies, including details like plot summaries, release dates, ratings, and more.
+- **Subscription Management**: Users can purchase a subscription to access enhanced features, such as exclusive content.
+- **Responsive Design**: The app is fully optimized for both desktop and mobile devices for a seamless experience.
+- **Smooth Animations**: Thanks to Framer Motion, the app offers smooth transitions and animations for a delightful browsing experience.
+- **TMDB API Integration**: Fetches live movie data directly from TMDB, providing up-to-date information on all films.
+
+## Tech Stack
+
+- **React**: A JavaScript library for building user interfaces.
+- **Next.js**: A React framework that offers fast rendering, routing, and optimizations for server-side rendering (SSR) and static site generation (SSG).
+- **Tailwind CSS**: A utility-first CSS framework for rapid styling and responsive design.
+- **TMDB API**: Provides the data for movie information, including titles, ratings, descriptions, and images.
+- **Framer Motion**: For adding smooth animations and transitions.
+- **React Query**: To handle server-state management, ensuring efficient data fetching and caching.
+
+## Installation
+
+### 1. Clone the repository:
 
 ```bash
-npm run dev
-# or
+git clone https://github.com/bagheri-dev/streom-vibe.git
+cd streom-vibe
+npm install --global yarn
+yarn
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
+This will start the development server, and your app will be live at http://localhost:3000.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Deploying to Vercel
+1- Push the code to your GitHub repository.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+2- Go to Vercel and click on New Project.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3- Import your GitHub repository and Vercel will automatically deploy your app.
 
-## Learn More
+4- Follow the Vercel setup instructions and your project will be live on a Vercel subdomain.
 
-To learn more about Next.js, take a look at the following resources:
+## Contributing
+We welcome contributions to this project! Whether you're an experienced developer or someone just getting started, feel free to fork the repository, submit issues, or make pull requests.
+Here are a few ways you can contribute:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1- Bug Reports: If you find any bugs, please open an issue so we can address it.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2- New Features: If you have an idea for a new feature, submit an issue or pull request to discuss it.
 
-## Deploy on Vercel
+3- Improvements: If you have suggestions to improve the app, your feedback is highly appreciated.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+To get started with contributing:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1- Fork the repository
+
+2- Clone it to your local machine
+
+3- Create a new branch: git checkout -b feature-branch
+
+4- Make your changes and commit them
+
+5- Push to your fork: git push origin feature-branch
+
+6 -Submit a pull request
+
+##License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
