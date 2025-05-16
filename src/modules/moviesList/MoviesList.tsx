@@ -3,7 +3,7 @@ import { fetchMoviesList } from "@/apis/services/fetchMoviesList";
 import { SiteContainer } from "@/lib/SiteContainer";
 import { useQuery } from "@tanstack/react-query";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CardMovie } from "../index/card/CardMovie";
 import { IMovie } from "@/type/movie.type";
 
@@ -16,20 +16,27 @@ const SkeletonCard = () => (
 );
 
 export const MoviesList = () => {
-    const [page, setPage] = useState(1); 
+    const [page, setPage] = useState(1);
 
     const { data, isLoading, error } = useQuery({
-        queryKey: ['Movies', page], 
-        queryFn: async () => (await fetchMoviesList(page)), 
+        queryKey: ['Movies', page],
+        queryFn: async () => (await fetchMoviesList(page)),
     });
 
-    const totalPages = data?.total_pages || 1; 
+    const totalPages = data?.total_pages || 1;
 
     const handlePageChange = (newPage: number) => {
         if (newPage > 0 && newPage <= totalPages) {
             setPage(newPage);
         }
     };
+
+    useEffect(() => {
+        window.scrollTo({
+            top: 800,
+            behavior: 'smooth',
+        });
+    }, [page]);
 
     if (error) {
         return (
