@@ -14,7 +14,9 @@ export const Banner = () => {
                         </p>
                     </div>
                     <div className="text-center lg:text-left">
-                        <button className={"cursor-pointer py-4 px-6 bg-red45 text-white text-lg font-manrope-semibold rounded-xl"}>
+                        <button
+                            className={"cursor-pointer py-4 px-6 bg-red45 text-white text-lg font-manrope-semibold rounded-xl transition-all duration-300 transform hover:bg-red-600 hover:scale-105 hover:shadow-lg hover:text-gray-100"}
+                        >
                             Start a Free Trial
                         </button>
                     </div>
