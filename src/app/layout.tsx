@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import {Header} from "@/modules/layout/header/Header";
+import Providers from "@/providers/Providers";
+import {Footer} from "@/modules/layout/footer/Footer";
+import ProgressBar from "@/components/shared/ProgressBar";
 
 export const metadata: Metadata = {
   title: "StreomVibe",
@@ -14,9 +18,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`antialiased`}
+        className={`antialiased font-manrope-regular bg-black08`}
       >
-        {children}
+        <ProgressBar />
+      <Header />
+        <Providers>
+            {children}
+        </Providers>
+      <Footer />
       </body>
     </html>
   );
