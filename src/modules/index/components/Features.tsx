@@ -49,7 +49,7 @@ export const Features = () => {
                         With StreamVibe, you can enjoy your favorite movies and TV shows anytime, anywhere. Our platform is designed to be compatible with a wide range of devices, ensuring that you never miss a moment of entertainment.
                     </p>
                 </div>
-                <div className={"grid grid-cols-3 gap-[30px]"}>
+                <div className={"grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-[30px]"}>
                     {FeaturesData.map((item, i) => {
                         return <CardFeatures key={i} {...item}  />
                     })}
