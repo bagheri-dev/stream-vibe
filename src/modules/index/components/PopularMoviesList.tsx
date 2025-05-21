@@ -40,7 +40,16 @@ export const PopularMoviesList = () => {
                     modules={[Navigation, Pagination]}
                     spaceBetween={20}
                     slidesPerView={1}
-                    pagination={{ clickable: true }}
+                    loop={true}
+                    pagination={{
+                        clickable: true,
+                        el: '.movie-custom-pagination',
+                    }}
+                    navigation={{
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    }}
+                    autoplay={{ delay: 200 }}
                     breakpoints={{
                         640: {
                             slidesPerView: 2,
@@ -55,13 +64,16 @@ export const PopularMoviesList = () => {
                             spaceBetween: 30,
                         },
                     }}
-                    className="mySwiper h-[500px]"
+                    className="mySwiper h-[500px] relative"
                 >
                     {data?.map((movie: IMovie, index: number) => (
                         <SwiperSlide key={index}>
                             <CardMovie {...movie} />
                         </SwiperSlide>
                     ))}
+                    <div className="movie-custom-pagination"></div>
+                    <div className="swiper-button-prev -translate-y-6"></div>
+                    <div className="swiper-button-next -translate-y-6"></div>
                 </Swiper>
             </SiteContainer>
         </div>
