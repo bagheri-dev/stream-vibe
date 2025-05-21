@@ -1,9 +1,9 @@
-import UnderDevelopmentBanner from "@/components/shared/UnderDevelopmentBanner";
+import {Support} from "@/modules/support/Support";
 
 export default function SupportPage() {
     return (
         <>
-            <UnderDevelopmentBanner />
+            <Support/>
         </>
     );
 }
