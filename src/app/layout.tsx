@@ -4,6 +4,7 @@ import {Header} from "@/modules/layout/header/Header";
 import Providers from "@/providers/Providers";
 import {Footer} from "@/modules/layout/footer/Footer";
 import ProgressBar from "@/components/shared/ProgressBar";
+import {ToastContainer} from "react-toastify";
 
 export const metadata: Metadata = {
   title: "StreomVibe",
@@ -22,6 +23,18 @@ export default function RootLayout({
       >
         <ProgressBar />
       <Header />
+        <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick={false}
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+        />
         <Providers>
             {children}
         </Providers>
