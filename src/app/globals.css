@@ -352,3 +352,61 @@
 .custom-gradient-background {
   background: linear-gradient(to left, #E50000 , #E5000081 , #0F0F0F);
 }
+.movie-custom-pagination{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translateY(5px);
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+}
+.movie-custom-pagination  .swiper-pagination-bullet {
+  width: 17px;
+  height: 4px;
+  background-color: #868686;
+  opacity: 1;
+  margin: 0 4px;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+.movie-custom-pagination  .swiper-pagination-bullet-active {
+  opacity: 1;
+  width: 23px;
+  border-radius: 100px;
+  height: 4px;
+  background-color: #E50000;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  background: rgba(0, 0, 0, 0.5);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+.swiper-button-prev {
+  left: 10px;
+}
+
+.swiper-button-next {
+  right: 10px;
+}

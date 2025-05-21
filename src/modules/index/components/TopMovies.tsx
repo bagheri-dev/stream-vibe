@@ -39,7 +39,10 @@ export const TopMoviesList = () => {
                     modules={[Navigation, Pagination]}
                     spaceBetween={20}
                     slidesPerView={1}
-                    pagination={{ clickable: true }}
+                    pagination={{
+                        clickable: true,
+                        el: '.movie-custom-pagination',
+                    }}
                     breakpoints={{
                         640: {
                             slidesPerView: 2,
@@ -61,6 +64,7 @@ export const TopMoviesList = () => {
                             <CardMovie {...movie} />
                         </SwiperSlide>
                     ))}
+                    <div className="movie-custom-pagination"></div>
                 </Swiper>
             </SiteContainer>
         </div>
