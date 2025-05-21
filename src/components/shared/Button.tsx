@@ -36,7 +36,6 @@ export const Button = (props: ButtonProps) => {
         disabled = false,
         loading = false,
         pulseAnimation = false,
-        ...rest
     } = props;
 
     // Base classes
@@ -66,7 +65,7 @@ export const Button = (props: ButtonProps) => {
     const combinedClasses = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`;
 
     if (props.as === "link") {
-        const { as, href, ...linkProps } = props;
+        const { href, ...linkProps } = props;
         return (
             <Link href={href} passHref legacyBehavior>
                 <a className={combinedClasses} {...linkProps}>
