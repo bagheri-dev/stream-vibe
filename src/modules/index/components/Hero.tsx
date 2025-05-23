@@ -4,7 +4,7 @@ import { FaPlay } from "react-icons/fa";
 
 export const Hero: FC = () => {
     return (
-        <div className={"bg-[url(/images/hero.png)] bg-center bg-cover h-screen mb-[200px]"}>
+        <div className={"bg-[url(/images/hero.webp)] bg-center bg-cover h-screen mb-[200px]"}>
             <SiteContainer>
                 <div className={"h-screen flex items-end justify-center"}>
                     <div className={"flex flex-col items-center gap-[50px] translate-y-32"}>

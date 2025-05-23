@@ -17,7 +17,7 @@ export const Support = () => {
                             We&#39;re here to help you with any problems you may be having with our product.
                         </p>
                         <div>
-                            <Image src={"/images/support-image.png"} alt={"support"} width={533} height={477} />
+                            <Image src={"/images/support-image.webp"} alt={"support"} width={533} height={477} />
                         </div>
                     </div>
                     <div>
