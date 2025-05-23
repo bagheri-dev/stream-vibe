@@ -50,7 +50,7 @@ export const MoviesList = () => {
         <div className="pb-16 lg:pb-[116px]">
             <div className="w-full h-screen mb-[150px]">
                 <Image
-                    src="/images/dh0ax3u-fd7638d8-a0d5-4ebe-a4b3-ee3b585d0a00.jpg"
+                    src="/images/dh0ax3u-fd7638d8-a0d5-4ebe-a4b3-ee3b585d0a00.webp"
                     alt="Movie Poster"
                     width={300}
                     height={600}
