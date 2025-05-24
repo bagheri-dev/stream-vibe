@@ -1,9 +1,9 @@
-import UnderDevelopmentBanner from "@/components/shared/UnderDevelopmentBanner";
+import {Subscriptions} from "@/modules/subscriptions/Subscriptions";
 
 export default function SubscriptionsPage() {
     return (
         <>
-            <UnderDevelopmentBanner />
+            <Subscriptions />
         </>
     );
 }

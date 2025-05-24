@@ -9,7 +9,7 @@ type SiteContainer = {
 //eslint-disable-next-line
 export const SiteContainer = ({children, className}: SiteContainer) => {
     return (
-        <div className={cn('px-4 container 2xl:max-w-[1440px] mx-auto', className)}>
+        <div className={cn('px-4 container 2xl:max-w-[1920px] mx-auto', className)}>
             {children}
         </div>
     )
