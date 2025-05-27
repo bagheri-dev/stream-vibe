@@ -110,17 +110,19 @@ export const Header = () => {
 
                     <div className="hidden lg:block">
                         <nav>
-                            <ul className={`flex items-center p-2.5 rounded-[12px] transition-all duration-300`}>
+                            <ul className="flex items-center p-2.5 rounded-[12px] transition-all duration-300">
                                 {Menu.map((item) => (
-                                    <Link key={item.name} href={item.src}>
-                                        <li className={`py-[14px] px-6 transition-colors duration-200 ${isActive(item.src) ? 'text-white font-semibold' : 'text-gray-100 hover:text-white'
-                                            }`}>
+                                    <li
+                                        key={item.name}
+                                        className={`py-[14px] px-6 transition-colors duration-200 ${isActive(item.src) ? 'text-white font-semibold' : 'text-gray-100 hover:text-white'}`}
+                                    >
+                                        <Link href={item.src}>
                                             {item.name}
                                             {isActive(item.src) && (
                                                 <div className="h-1 w-full bg-red-500 mt-1 rounded-full"></div>
                                             )}
-                                        </li>
-                                    </Link>
+                                        </Link>
+                                    </li>
                                 ))}
                             </ul>
                         </nav>
@@ -128,7 +130,7 @@ export const Header = () => {
 
                     <div className="flex items-center gap-x-4 md:gap-x-[14px] text-white">
                         <div className="relative" ref={searchRef}>
-                            <button onClick={toggleSearch} className="focus:outline-none">
+                            <button onClick={toggleSearch} className="focus:outline-none" aria-label={"search"}>
                                 <CiSearch className="text-xl cursor-pointer hover:text-gray-300 transition-colors size-6" />
                             </button>
                             <div
@@ -199,7 +201,7 @@ export const Header = () => {
                             </div>
                         </div>
 
-                        <Link href="/notifications">
+                        <Link href="/notifications" aria-label={"notifications"}>
                             <IoNotificationsOutline className="text-xl hover:text-gray-300 transition-colors size-6" />
                         </Link>
 
@@ -214,24 +216,22 @@ export const Header = () => {
                 </div>
 
                 <div
-                    className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${isMenuOpen ? "max-h-96 opacity-100 mt-4" : "max-h-0 opacity-0"
-                        }`}
+                    className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${isMenuOpen ? "max-h-96 opacity-100 mt-4" : "max-h-0 opacity-0"}`}
                 >
                     <nav>
-                        <ul className={`flex flex-col rounded-[12px] border-4 p-4 ${hasScrolled ? 'border-gray-800' : 'border-[#1F1F1F] bg-black/60'
-                            }`}>
+                        <ul className={`flex flex-col rounded-[12px] border-4 p-4 ${hasScrolled ? 'border-gray-800' : 'border-[#1F1F1F] bg-black/60'}`}>
                             {Menu.map((item) => (
-                                <Link key={item.name} href={item.src} onClick={() => setIsMenuOpen(false)}>
-                                    <li className={`py-3 px-4 transition-colors duration-200 border-b border-[#1F1F1F] last:border-b-0 ${isActive(item.src)
-                                        ? 'text-white font-semibold'
-                                        : 'text-gray-300 hover:text-white'
-                                        }`}>
+                                <li
+                                    key={item.name}
+                                    className={`py-3 px-4 transition-colors duration-200 border-b border-[#1F1F1F] last:border-b-0 ${isActive(item.src) ? 'text-white font-semibold' : 'text-gray-300 hover:text-white'}`}
+                                >
+                                    <Link href={item.src} onClick={() => setIsMenuOpen(false)}>
                                         {item.name}
                                         {isActive(item.src) && (
                                             <div className="h-1 w-full bg-red-500 mt-1 rounded-full"></div>
                                         )}
-                                    </li>
-                                </Link>
+                                    </Link>
+                                </li>
                             ))}
                         </ul>
                     </nav>
