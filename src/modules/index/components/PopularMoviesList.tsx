@@ -52,19 +52,19 @@ export const PopularMoviesList = () => {
                     autoplay={{ delay: 200 }}
                     breakpoints={{
                         640: {
-                            slidesPerView: 2,
+                            slidesPerView: 3,
                             spaceBetween: 20,
                         },
                         768: {
-                            slidesPerView: 3,
-                            spaceBetween: 30,
-                        },
-                        1024: {
                             slidesPerView: 4,
                             spaceBetween: 30,
                         },
+                        1024: {
+                            slidesPerView: 5,
+                            spaceBetween: 30,
+                        },
                     }}
-                    className="mySwiper h-[500px] relative"
+                    className="mySwiper h-[600px] relative"
                 >
                     {data?.map((movie: IMovie, index: number) => (
                         <SwiperSlide key={index}>
