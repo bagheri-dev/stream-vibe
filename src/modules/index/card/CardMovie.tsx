@@ -45,12 +45,12 @@ export const CardMovie = (props: IMovie) => {
                 animate="visible"
                 whileHover="hover"
             >
-                <div className="relative mb-2 h-[350px] overflow-hidden rounded-[12px]">
+                <div className="relative mb-2 h-[450px] overflow-hidden rounded-[12px]">
                     <Image
                         src={posterUrl}
                         alt={props.original_title}
                         fill
-                        className="object-cover"
+                        className="object-fill"
                         priority
                         unoptimized
                     />

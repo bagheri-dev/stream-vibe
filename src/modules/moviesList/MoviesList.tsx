@@ -66,9 +66,9 @@ export const MoviesList = () => {
                     </h2>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
                     {isLoading
-                        ? Array.from({ length: 12 }).map((_, index) => (
+                        ? Array.from({ length: 20 }).map((_, index) => (
                             <SkeletonCard key={index} />
                         ))
                         : data.results.map((movie: IMovie) => (
